@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import image from '../assets/images/travel.jpg'
 import { Button } from './Button';
 import Packages from './Packages';
@@ -12,6 +12,9 @@ const mystyle = {
 };
 
 export default function Body() {
+
+    
+    
     return (
         <div className="">
             <Landing></Landing>
@@ -23,6 +26,12 @@ export default function Body() {
 
 
 function Landing() {
+    const [searched, setSearched] = useState(false);
+    const handler = () => {
+        setSearched(true);
+        // emit city searched from Search comp.
+    }
+
     return (
         <div>
             <section id="landing" className="landing-page" style={{backgroundImage:`url(${image})`}} >
@@ -33,8 +42,8 @@ function Landing() {
                         Start travelling with us
                     </h2>
                     <div className="mt-8 flex justify-center">
-                        <Search></Search>
-                        <Button>Search</Button>
+                        <Search searched={searched}></Search>
+                        <Button onClick={handler}>Search</Button>
                     </div>
                 </div>
             </div>

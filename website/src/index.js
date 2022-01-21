@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import  './index.css';
+import './index.css';
 import { BrowserRouter } from "react-router-dom";
-import { Route, Routes } from 'react-router';
-import Places from './components/Places';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>    
-        <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/places/:id" element={<Places />} />
-      </Routes>
+    <BrowserRouter>
+      <App></App>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

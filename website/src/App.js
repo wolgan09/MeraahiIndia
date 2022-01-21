@@ -1,7 +1,9 @@
-import { Route, Routes } from 'react-router';
+import { Route, Routes, Outlet } from 'react-router';
+import Blog from './components/Blog';
 import Body from './components/Body';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Places from './components/Places';
 
 function App() {
   return (
@@ -9,7 +11,12 @@ function App() {
       <div><Header></Header></div>
       {/* Router Outlet */}
       <div className="min-h-full">
-        <Body></Body>
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/places/:id" element={<Places />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+        <Outlet></Outlet>
       </div>
       <div>
         <Footer></Footer>
