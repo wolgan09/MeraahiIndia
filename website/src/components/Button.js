@@ -12,4 +12,9 @@ border-radius: 3px;
     color: ${props => props.primary ?  "white": "white"};
 
   }
+&.active{
+    background: palevioletred;
+    color: white;
+
+  }
 `;
