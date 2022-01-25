@@ -22,7 +22,7 @@ export default function Header() {
                         <span className="float-left pl-2 pr-2 pt-0.5 hover:text-stone-500 cursor-pointer">
                             <FaUserAlt></FaUserAlt>
                         </span>
-                        <span className="float-right hover:text-stone-500 cursor-pointer">Sign in</span>
+                        <Link to="/login"><span className="float-right hover:text-stone-500 cursor-pointer">Sign in</span></Link>
                     </div>
                 </div>
             </div>

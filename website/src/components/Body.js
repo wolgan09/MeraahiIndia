@@ -13,8 +13,6 @@ const mystyle = {
 
 export default function Body() {
 
-    
-    
     return (
         <div className="">
             <Landing></Landing>
