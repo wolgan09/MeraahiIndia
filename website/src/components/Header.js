@@ -11,7 +11,7 @@ export default function Header() {
             <div className="flex flex-row sticky">
                 <div className="basis-1/4 my-1.5">
                     <img className="h-10 float-left" alt="logo" src={logo} ></img>
-                    <span className="absolute top-3 text-2xl">Meraahi India</span>
+                    <Link to="/"><span className="absolute top-3 text-2xl cursor-pointer">Meraahi India</span></Link>
                 </div>
                 <div className="grow"></div>
 
