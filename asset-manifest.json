@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "//wolgan09.github.io/MeraahiIndia/static/css/main.206fe524.css",
+    "main.js": "//wolgan09.github.io/MeraahiIndia/static/js/main.f923cb1c.js",
+    "static/media/1.jpg": "//wolgan09.github.io/MeraahiIndia/static/media/1.2bff6a480a4e2972722f.jpg",
+    "static/media/travel.jpg": "//wolgan09.github.io/MeraahiIndia/static/media/travel.230440acec20a2106d8d.jpg",
+    "static/media/logo.svg": "//wolgan09.github.io/MeraahiIndia/static/media/logo.dd46116bd2f10259f76c1662f751d8de.svg",
+    "index.html": "//wolgan09.github.io/MeraahiIndia/index.html",
+    "main.206fe524.css.map": "//wolgan09.github.io/MeraahiIndia/static/css/main.206fe524.css.map",
+    "main.f923cb1c.js.map": "//wolgan09.github.io/MeraahiIndia/static/js/main.f923cb1c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.206fe524.css",
+    "static/js/main.f923cb1c.js"
+  ]
+}
