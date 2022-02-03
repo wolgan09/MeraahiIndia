@@ -2,6 +2,7 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://https://wolgan09.github.io/MeraahiIndia/",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@tailwindcss/forms": "^0.4.0",
