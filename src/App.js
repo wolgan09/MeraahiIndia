@@ -1,16 +1,18 @@
-import { Route, Routes, Outlet } from 'react-router';
-import Blog from './components/Blog';
-import Body from './components/Body';
-import Events from './components/Events';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Login from './components/Login';
-import Places from './components/Places';
+import { Route, Routes, Outlet } from "react-router";
+import Blog from "./components/Blog";
+import Body from "./components/Body";
+import Events from "./components/Events";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Login from "./components/Login";
+import Places from "./components/Places";
 
 function App() {
   return (
     <div className="grid">
-      <div><Header></Header></div>
+      <div>
+        <Header></Header>
+      </div>
       {/* Router Outlet */}
       <div className="min-h-full">
         <Routes>
@@ -25,7 +27,6 @@ function App() {
       <div>
         <Footer></Footer>
       </div>
-
     </div>
   );
 }
