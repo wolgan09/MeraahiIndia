@@ -11,7 +11,7 @@ export default function Reviews() {
         </div>
 
         {[...Array(3)].map((tour, idx) => {
-          return <Review></Review>;
+          return <Review key={idx}></Review>;
         })}
       </div>
     </div>
