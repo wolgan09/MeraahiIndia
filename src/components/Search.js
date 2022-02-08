@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import data from "../assets/cities.json";
 
@@ -8,6 +8,25 @@ export default function Search(props) {
   const [cities, setCities] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const inputEl = useRef(null);
+  const doprdownContainer = useRef(null);
+  useOutsideAlerter(doprdownContainer);
+
+  function useOutsideAlerter(ref) {
+    useEffect(() => {
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setIsOpen(false);
+        }
+      }
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
   const searchKeyword = (event) => {
     const searchText = event.target.value;
     if (searchText.length === 0) {
@@ -33,13 +52,14 @@ export default function Search(props) {
         ref={inputEl}
         type="search"
         onChange={searchKeyword}
-        onBlur={() => setIsOpen(false)}
+        onBlur={(e) => !e}
         onFocus={() => setIsOpen(true)}
         className="border-2 border-solid border-zinc-900 p-4 w-96"
         placeholder="Any Places in you mind?"
       />
       {cities && cities.length && isOpen && (
         <div
+          ref={doprdownContainer}
           className="search-box h-36 absolute bg-white w-96 divide-y divide-solid"
           style={{ overflow: "scroll" }}
         >

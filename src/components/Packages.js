@@ -9,7 +9,7 @@ const TOUR_PACKAGES = [
     Voluptatibus quia, Nonea! Maiores et perferendis eaque,
     exercitationem praesentium nihil.`,
     price: "",
-    image: "",
+    image: "https://pixabay.com/images/id-6983434/",
     category: "mountain",
     hashtag: "",
   },
@@ -83,6 +83,7 @@ const TOUR_PACKAGES = [
 
 export default function Packages() {
   const categories = [
+    "All",
     "Near You",
     "Honeymoon",
     "Party",
@@ -95,10 +96,11 @@ export default function Packages() {
   const [tourList, setTourList] = useState([]);
 
   // const buttonEl = useRef(null);
-  const handleClick = (e) => {
+  const handleClick = (e, idx) => {
+    setActive(e, idx);
     let tours = [];
-    if (!e.target.value) {
-      tourList = tourList;
+    if (!e.target.value || e.target.value === "all") {
+      tours = TOUR_PACKAGES; // get from state
     } else {
       tours = TOUR_PACKAGES.filter((tour) => {
         if (tour.category === e.target.value) {
@@ -106,18 +108,18 @@ export default function Packages() {
           return tour;
         }
       });
-      console.log(tours);
-      setTourList(tours);
     }
+    setTourList(tours);
   };
 
   useEffect(() => {
     setTourList(TOUR_PACKAGES);
+    setActiveId(1);
   }, []);
 
   const setActive = useCallback((event, id) => {
     console.log(event.target, id);
-    setActiveId(id);
+    setActiveId(id + 1);
   }, []);
 
   return (
@@ -130,7 +132,7 @@ export default function Packages() {
                 key={"button-" + idx}
                 value={cat.toLowerCase().split(" ").join("")}
                 className={activeId && activeId === idx + 1 && "active"}
-                onClick={(e) => handleClick(e)}
+                onClick={(e) => handleClick(e, idx)}
               >
                 {cat}
               </Button>

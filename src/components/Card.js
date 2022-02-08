@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/images/1.jpg";
+// import image from "../assets/images/1.jpg";
 
 export default function Card(props) {
   console.log(props.tour);
